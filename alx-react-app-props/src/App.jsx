@@ -2,10 +2,10 @@
 import WelcomeMessage from './components/WelcomeMessage'
 import Header from './components/Header'
 import MainContent from './components/MainContent'
-import UserProfile from './components/UserProfile'
+import UserProfile from './components/ProfilePagez'
 import Footer from './components/Footer'
 import UserContext from './components/UserContext'
-import ProfilePage from './components/ProfilePage'
+import ProfilePage from './components/UserProfile'
 
 
 import './App.css'

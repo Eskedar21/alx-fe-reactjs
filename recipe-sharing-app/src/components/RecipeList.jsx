@@ -10,7 +10,7 @@ const RecipeList = () => {
 
   return (
     <div>
-      <SearchBar /> {/* Display the search bar */}
+    
       <div>
         {filteredRecipes.length === 0 ? (
           <p>No recipes found.</p>

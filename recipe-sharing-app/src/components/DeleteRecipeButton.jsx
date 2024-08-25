@@ -5,7 +5,7 @@ const DeleteRecipeButton = ({ recipeId }) => {
   const deleteRecipe = useRecipeStore(state => state.deleteRecipe);
 
   const handleDelete = (event) => {
-    event.preventDefault();
+  
     deleteRecipe(recipeId);
   };
 

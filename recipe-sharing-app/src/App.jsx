@@ -1,16 +1,23 @@
-import AddRecipeForm from './components/AddRecipeForm'
-import RecipeList from './components/RecipeList'
-import './App.css'
+
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import RecipeList from './components/RecipeList'; // Your list component
+import RecipeDetails from './components/RecipeDetails';
+import AddRecipeForm from './components/AddRecipeForm';
+
 
 function App() {
- 
-
   return (
-    <>
-    <AddRecipeForm/>
-     <RecipeList/>
-    </>
-  )
+    <Router>
+      <div>
+        <h1>Recipe App</h1>
+        <AddRecipeForm/>
+        <Routes>
+          <Route path="/" element={<RecipeList />} />
+          <Route path="/recipe/:recipeId" element={<RecipeDetails />} />
+        </Routes>
+      </div>
+    </Router>
+  );
 }
 
-export default App
+export default App;

@@ -4,7 +4,8 @@ import useRecipeStore from './recipeStore';
 const DeleteRecipeButton = ({ recipeId }) => {
   const deleteRecipe = useRecipeStore(state => state.deleteRecipe);
 
-  const handleDelete = () => {
+  const handleDelete = (event) => {
+    event.preventDefault();
     deleteRecipe(recipeId);
   };
 

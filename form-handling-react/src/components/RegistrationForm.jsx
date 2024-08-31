@@ -40,7 +40,7 @@ const RegistrationForm = () => {
                     value={username} 
                 
                     onChange={(e) => setUsername(e.target.value)} 
-                    style={{width: '300px'}}
+                    style={{width: '300px', height: '20px'}}
                 />
                  {errors.username && <p style={{ color: 'red' }}>{errors.username}</p>}
                 <input 
@@ -49,7 +49,7 @@ const RegistrationForm = () => {
                     value={email} 
                  
                     onChange={(e) => setEmail(e.target.value)} 
-                    style={{width: '300px'}}
+                    style={{width: '300px', height: '20px'}}
                 />
                 {errors.email && <p style={{ color: 'red' }}>{errors.email}</p>}
                 <input 
@@ -58,7 +58,7 @@ const RegistrationForm = () => {
                     value={password} 
                    
                     onChange={(e) => setPassword(e.target.value)} 
-                    style={{width: '300px'}}
+                    style={{width: '300px', height: '20px'}}
                 />
                 {errors.password && <p style={{ color: 'red' }}>{errors.password}</p>}
                 <button type="submit">Submit</button>

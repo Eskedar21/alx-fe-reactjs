@@ -11,7 +11,7 @@ const fetchPosts = async () => {
 
 const PostsComponent = () => {
 
-    const { data,isError, error, isLoading, isFetching } = useQuery('posts', fetchPosts, {
+    const { data,isError, error, isLoading, isFetching, refetch} = useQuery('posts', fetchPosts, {
         // Customizing the behavior of React Query with these options:
         staleTime: 10000, // 10 seconds
         cacheTime: 300000, // 5 minutes
@@ -23,6 +23,12 @@ const PostsComponent = () => {
  if(isError) return <div>Error: {error.message}</div>;
 
   return (
+    <> 
+    
+    <h1>Posts</h1>
+    <button onClick={refetch} disabled={isFetching}>
+      {isFetching ? 'Fetching...' : 'Refetch Data'}
+    </button>
     <div>
         {data.map(item => (
                 <div key={item.id} style={{ marginBottom: '20px', padding: '10px', border: '1px solid #ddd' }}>
@@ -31,6 +37,9 @@ const PostsComponent = () => {
               </div>
             ))}
     </div>
+    
+    </>
+    
   )
 }
 

@@ -2,18 +2,12 @@ import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
-const RegistrationForm = () => {
+const FormikForm= () => {
   // Define the validation schema using Yup
   const validationSchema = Yup.object({
-    username: Yup.string()
-      .min(3, "Username must be at least 3 characters")
-      .required("Username is required"),
-    email: Yup.string()
-      .email("Invalid email address")
-      .required("Email is required"),
-    password: Yup.string()
-      .min(8, "Password must be at least 8 characters")
-      .required("Password is required"),
+    username: Yup.string().required("Username is required"),
+    email: Yup.string().required("Email is required"),
+    password: Yup.string().required("Password is required"),
   });
 
   // Initial form values
@@ -30,7 +24,7 @@ const RegistrationForm = () => {
   };
 
   return (
-    <div>
+    <div className="app">
       <h1>Registration Form</h1>
       {/* Formik setup */}
       <Formik
@@ -39,7 +33,7 @@ const RegistrationForm = () => {
         onSubmit={handleSubmit}
       >
         {() => (
-          <Form style={{ display: "flex", flexDirection: "column", gap: "15px", width: "300px" }}>
+          <Form className="signup_form" style={{ display: "flex", flexDirection: "column", gap: "15px", width: "300px" }}>
             <div>
               <label htmlFor="username">Username</label>
               <Field type="text" name="username" />
@@ -66,4 +60,4 @@ const RegistrationForm = () => {
   );
 };
 
-export default RegistrationForm;
+export default FormikForm;

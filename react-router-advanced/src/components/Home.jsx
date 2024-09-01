@@ -10,7 +10,7 @@ export const Home = () => {
           <li><Link to="About">About</Link></li>
         </ul>
       </nav>
-      <h1 style={{color: 'white'}}>Welcome to Home page</h1> 
+      <h1>Welcome to Home page</h1> 
     </div>
   )
 }

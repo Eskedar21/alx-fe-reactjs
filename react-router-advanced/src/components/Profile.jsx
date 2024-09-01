@@ -1,5 +1,7 @@
 import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Route, Routes, Outlet } from 'react-router-dom';
+import ProfileDetails from './ProfileDetails';
+import ProfileSettings from './ProfileSettings';
 
 function Profile() {
   return (
@@ -7,11 +9,21 @@ function Profile() {
       <h1>Profile Page</h1>
       <nav>
         <ul>
-          <li><Link to="ProfileDetails">Profile Details</Link></li>
+          <li><Link to="ProfileDetail">Profile Details</Link></li>
           <li><Link to="ProfileSettings">Profile Settings</Link></li>
         </ul>
       </nav>
-      <Outlet /> {/* This renders nested routes */}
+
+      <Routes>
+        {/* Default route that displays a message */}
+        <Route index element={<h3>Please select an option.</h3>} />
+        {/* Nested routes for Profile Details and Settings */}
+        <Route path="ProfileDetail" element={<ProfileDetails />} />
+        <Route path="ProfileSettings" element={<ProfileSettings />} />
+      </Routes>
+
+      {/* The Outlet renders the child route components */}
+      <Outlet />
     </div>
   );
 }

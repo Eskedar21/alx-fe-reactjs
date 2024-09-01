@@ -1,7 +1,5 @@
 import React from 'react'
-import { Link, Outlet } from 'react-router-dom';
-import { Home } from './Home';
-import Profile from './Profile';
+
 const About = () => {
   return (
     <div>

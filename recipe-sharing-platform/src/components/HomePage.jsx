@@ -10,7 +10,7 @@ function HomePage() {
   return (
     <>
      <h1 className='text-center my-20 text-green-800 font-bold lg:text-7xl sm:text-3xl md:text-4xl'>Wellcome to Recipe World!</h1>
-     <div className='lg:flex  font-mono md:grid md:grid-cols-2 sm:grid sm:grid-cols-1 md:m-20'>
+     <div className='lg:grid lg:grid-cols-3  font-mono  md:grid md:grid-cols-2 sm:grid sm:grid-cols-1 md:m-20'>
         {recipes.map((recipe) => {
             return (
               <div key={recipe.id} className='rounded-xl shadow w-96 h-64 md:h-72 sm:h-80 bg-gray-100 hover:bg-transparent  text-center p-7 mx-auto my-20 gap-1 sm:m-10 md:m-10'>

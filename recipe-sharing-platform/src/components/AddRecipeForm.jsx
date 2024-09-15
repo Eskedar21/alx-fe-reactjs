@@ -1,29 +1,35 @@
-import { useRef } from "react";
+import { useState } from "react";
 
 import React from 'react'
 
 function AddRecipeForm() {
-   const titleRef = useRef();
-   const ingredientsRef = useRef();
-   const preparationRef = useRef();
+  const [formData, setFormData] = useState({'title': '', 'ingredients': '', 'preparation': ''});
 
+   const handleChange = (e) => {
+     const {name, value} = e.target;
+     setFormData(prevState=> ({...prevState, [name]: value}))
+    
+   }
 
    const handleSubmit = (e) => {
        e.preventDefault();
-       console.log('Recipe Title:',titleRef.current.value);
-       console.log('Ingredients:',ingredientsRef.current.value);
-       console.log('Preparation:',preparationRef.current.value);
+       console.log(formData);
+       setFormData({
+        title: '',
+        ingredients: '',
+        preparation: ''
+      });
    }
 
   return (
     <>
       <form onSubmit={handleSubmit}>
         <label htmlFor="title">Recipe Title:</label>
-         <input type="text"  id="title"   name="title"   ref={titleRef} />
+         <input type="text"  id="title"   name="title"  value={formData.title} onChange={handleChange}/>
          <label htmlFor="ingredients">Ingredients: </label>
-         <textarea name="ingredients" id="ingredients" ref={ingredientsRef}></textarea>
+         <textarea name="ingredients" id="ingredients" value={formData.ingredients} onChange={handleChange}></textarea>
          <label htmlFor="preparation">Preparation Steps: </label>
-         <textarea name="preparation" id="preparation" ref={preparationRef}></textarea>
+         <textarea name="preparation" id="preparation" value={formData.preparation} onChange={handleChange}></textarea>
          <button type="submit">Submit</button>
       </form>
     
@@ -37,4 +43,38 @@ export default AddRecipeForm;
 
 
 
+// import { useState } from 'react';
 
+// const ControlledForm = () => {
+//     const [formData, setFormData] = useState({ name: '', email: '' });
+
+//     const handleChange = (e) => {
+//         const { name, value } = e.target;
+//         setFormData(prevState => ({ ...prevState, [name]: value }));
+//     };
+
+//     const handleSubmit = (e) => {
+//         e.preventDefault();
+//         console.log(formData);
+//     };
+
+//     return (
+//         <form onSubmit={handleSubmit}>
+//             <input
+//                 type="text"
+//                 name="name"
+//                 value={formData.name}
+//                 onChange={handleChange}
+//             />
+//             <input
+//                 type="email"
+//                 name="email"
+//                 value={formData.email}
+//                 onChange={handleChange}
+//             />
+//             <button type="submit">Submit</button>
+//         </form>
+//     );
+// };
+
+// export default ControlledForm;

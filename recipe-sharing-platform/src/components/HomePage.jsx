@@ -27,7 +27,7 @@ function HomePage() {
             )
             
         })}
-        <Link to="/add-recipe"><button className='rounded-xl bg-gray-100 text-green-700 w-48 p-2 hover:bg-green-700 hover:text-white mx-auto my-20 container'>Add Recipe</button></Link>
+        ÷
      </div>
      
     </>

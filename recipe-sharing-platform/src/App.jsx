@@ -9,7 +9,7 @@ function App() {
 
   return (
     <>  
-    <AddRecipeForm/>
+   
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -18,6 +18,7 @@ function App() {
           */}
       </Routes>
    </Router>
+   <AddRecipeForm/>
     </>
   )
 }

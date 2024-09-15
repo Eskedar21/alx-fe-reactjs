@@ -3,7 +3,7 @@ import { useState } from "react";
 import React from 'react'
 
 function AddRecipeForm() {
-  const [formData, setFormData] = useState({'title': '', 'ingredients': '', 'preparation': ''});
+  const [formData, setFormData] = useState({'title': '', 'ingredients': '', 'steps': ''});
 
    const handleChange = (e) => {
      const {name, value} = e.target;
@@ -17,7 +17,7 @@ function AddRecipeForm() {
        setFormData({
         title: '',
         ingredients: '',
-        preparation: ''
+        steps: ''
       });
    }
 
@@ -28,8 +28,8 @@ function AddRecipeForm() {
          <input type="text"  id="title"   name="title"  value={formData.title} onChange={handleChange}/>
          <label htmlFor="ingredients">Ingredients: </label>
          <textarea name="ingredients" id="ingredients" value={formData.ingredients} onChange={handleChange}></textarea>
-         <label htmlFor="preparation">Preparation Steps: </label>
-         <textarea name="preparation" id="preparation" value={formData.preparation} onChange={handleChange}></textarea>
+         <label htmlFor="steps">Preparation Steps: </label>
+         <textarea name="steps" id="steps" value={formData.steps} onChange={handleChange}></textarea>
          <button type="submit">Submit</button>
       </form>
     

@@ -9,12 +9,9 @@ function AddRecipeForm() {
   });
 
   // Handle change for each input/textarea
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState,
-      [name]: value
-    }));
+  const handleChange = (event) => {
+    const newObj = {...formData, [event.target.name]: event.target.value}
+    setFormData(newObj)
   };
 
   // Handle form submission
@@ -32,6 +29,7 @@ function AddRecipeForm() {
 
   return (
     <>
+   
       <form onSubmit={handleSubmit}>
         <label htmlFor="title">Recipe Title:</label>
         <input

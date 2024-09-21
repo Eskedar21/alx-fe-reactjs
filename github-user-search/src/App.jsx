@@ -1,20 +1,22 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
+import Search from './components/Search'
 
 function App() {
   
 
   return (
     <>
-    <h1>Eskedar Tesfaye</h1>
-      <Router>
+   
+    <Search/>
+      {/* <Router>
             <Routes>
                 <Route></Route>
 
 
             </Routes>
 
-      </Router>
+      </Router> */}
       
     </>
   )

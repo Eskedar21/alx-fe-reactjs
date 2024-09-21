@@ -2,14 +2,14 @@ import AddRecipeForm from "./components/AddRecipeForm";
 import HomePage from "./components/HomePage"
 import RecipeDetail from './components/RecipeDetail';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
+const apiKey = process.env.REACT_APP_GITHUB_API_KEY
 
 function App() {
   
 
   return (
     <>  
-   
+     
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />

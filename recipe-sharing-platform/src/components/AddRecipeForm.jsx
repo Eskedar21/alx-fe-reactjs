@@ -61,7 +61,7 @@ function AddRecipeForm() {
           name="title"
           value={formData.title}
           onChange={handleChange}
-          className='rounded shadow h-10 p-5 text-green-700 focus:outline-none focus:ring-1 focus:ring-green-700  transition-colors duration-300 '
+          className='rounded shadow h-10 p-3 text-green-700 focus:outline-none focus:ring-1 focus:ring-green-700  transition-colors duration-300 bg-transparent border-gray-400 '
         />
         {/* Error message for title */}
         {errors.title && <p style={{ color: 'red', fontSize: '14px' }}>{errors.title}</p>}

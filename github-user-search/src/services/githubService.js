@@ -1,14 +1,23 @@
 import axios from 'axios';
 
-const fetchUserData = async (username) => {
-  try {
-    const response = await axios.get(`https://api.github.com/users/${username}`);
-    console.log(response.data); // Handle success
-    return response.data; // Return the data for further use
-  } catch (error) {
-    console.error('There was an error!', error); // Handle error
-    throw error; // Rethrow the error if needed
+const fetchUserData = async (username, location, minRepos) => {
+  let query = `q=${username}`;
+
+  if (location) {
+    query += `+location:${location}`;
   }
-}
+
+  if (minRepos) {
+    query += `+repos:>=${minRepos}`;
+  }
+
+  try {
+    const response = await axios.get(`https://api.github.com/search/users?${query}`);
+    return response.data.items; // Return all the users
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    throw error;
+  }
+};
 
 export default fetchUserData;

@@ -21,7 +21,6 @@ const fetchUserData = async (username, location, minRepos) => {
     // Return the list of users from the 'items' array in the response
     return response.data.items;
   } catch (error) {
-    console.error('Error fetching data from GitHub API:', error);
     throw error; // Propagate the error to be handled by the calling component
   }
 };
